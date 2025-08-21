@@ -108,22 +108,13 @@ const PrescriptionsPrintout: React.FC<PrescriptionsPrintoutProps> = ({ excludedP
                         )}
                       </p>
                       <p>
-                        <span className={styles.faintText}>{t('datePrescribed', 'Date prescribed')}</span>
+                        <span className={styles.faintText}>{t('datePrescribed', 'Fecha prescrita')}</span>
                         {': '}{' '}
                         <span className={styles.prescriptionInfo}>
                           {formatDate(parseDate(request.request.authoredOn), { noToday: true })}
                         </span>
                       </p>
-                      <p>
-                        <span className={styles.faintText}>{t('refills', 'Refills')}</span>
-                        {': '}{' '}
-                        <span className={styles.prescriptionInfo}>
-                          {numberOfRefillsAllowed || numberOfRefillsAllowed === 0
-                            ? numberOfRefillsAllowed
-                            : t('noRefills', 'No refills')}
-                        </span>
-                      </p>
-
+                      
                       {dosageInstruction?.text && <p>{dosageInstruction.text}</p>}
                       {dosageInstruction?.additionalInstruction?.length > 0 && (
                         <p>
